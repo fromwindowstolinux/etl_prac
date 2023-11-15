@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: 'postgres:latest'
+    restart: unless-stopped
+    ports: 
+      - 5055:5432
+    environment:
+      - POSTGRES_USER=store
+      - POSTGRES_PASSWORD=store
+      - POSTGRES_DB=dbstore
+    volumes:
+      - ./psql-data:/var/lib/psql/data 
